@@ -127,7 +127,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "E:\\practice\\NestJS\\generated\\prisma",
+      "value": "/home/ahtisham-ansari/Documents/Practice/NestJS/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -136,12 +136,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "E:\\practice\\NestJS\\prisma\\schema.prisma",
+    "sourceFilePath": "/home/ahtisham-ansari/Documents/Practice/NestJS/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -159,13 +159,13 @@ const config = {
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "fromEnvVar": null,
+        "value": "postgresql://neondb_owner:npg_4RQjPiMdx0YN@ep-winter-butterfly-a4re9p8b-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require"
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n  // uncomment next line if you use Prisma <5.10\n  // directUrl = env(\"DATABASE_URL_UNPOOLED\")\n}\n\nenum Role {\n  INTERN\n  ENGINEER\n  ADMIN\n}\n\nmodel Employee {\n  id        Int      @id @default(autoincrement())\n  name      String\n  email     String   @unique\n  role      Role\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
-  "inlineSchemaHash": "5ad939a26bf9c0b87eca6cccaf65f698d11068a196438f4c8993c92d38b4000d",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = \"postgresql://neondb_owner:npg_4RQjPiMdx0YN@ep-winter-butterfly-a4re9p8b-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require\"\n  //url      = env(\"DATABASE_URL\")\n  // uncomment next line if you use Prisma <5.10\n  // directUrl = env(\"DATABASE_URL_UNPOOLED\")\n}\n\nenum Role {\n  INTERN\n  ENGINEER\n  ADMIN\n}\n\nmodel Employee {\n  id        Int      @id @default(autoincrement())\n  name      String\n  email     String   @unique\n  role      Role\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n",
+  "inlineSchemaHash": "c2905fd93edfc3da592fe3faae6a4f3f8691107bf90ea71a7e00eb51c67bd7aa",
   "copyEngine": true
 }
 config.dirname = '/'
@@ -176,9 +176,7 @@ config.engineWasm = undefined
 config.compilerWasm = undefined
 
 config.injectableEdgeEnv = () => ({
-  parsed: {
-    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
-  }
+  parsed: {}
 })
 
 if (typeof globalThis !== 'undefined' && globalThis['DEBUG'] || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined) {
